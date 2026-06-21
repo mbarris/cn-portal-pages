@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 门户说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f6f8;
+            color: #2a2e35;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a2f44 100%);
+            color: #f0f3f7;
+            padding: 4rem 1.5rem 3.2rem;
+            text-align: center;
+            border-bottom: 4px solid #3a7ca5;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            opacity: 0.82;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 350;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 1rem;
+            display: inline-block;
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04), 0 2px 6px rgba(0,20,30,0.02);
+            padding: 2.5rem 2.8rem;
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #0f263a;
+            border-left: 5px solid #3a7ca5;
+            padding-left: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1c3b52;
+            margin: 1.6rem 0 0.6rem;
+        }
+        .card p {
+            margin-bottom: 1rem;
+        }
+        .intro-highlight {
+            background: #f0f4fa;
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.2rem 0 1.8rem;
+            border-left: 4px solid #3a7ca5;
+            font-size: 1.02rem;
+        }
+        .intro-highlight a {
+            color: #1b5a7e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+        a {
+            color: #1b5a7e;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        a:hover {
+            border-bottom-color: #1b5a7e;
+        }
+        .accent-link {
+            color: #1b5a7e;
+            font-weight: 500;
+        }
+        .blockquote-box {
+            background: #f7f9fc;
+            border-radius: 12px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.8rem 0;
+            position: relative;
+            font-style: normal;
+        }
+        .blockquote-box::before {
+            content: "“";
+            font-size: 3rem;
+            color: #3a7ca5;
+            opacity: 0.25;
+            position: absolute;
+            left: 0.8rem;
+            top: -0.2rem;
+            font-family: Georgia, serif;
+        }
+        .blockquote-box p {
+            margin-left: 1.2rem;
+            color: #2d4055;
+        }
+        .blockquote-box cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #5c6f82;
+            text-align: right;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.4rem 0;
+        }
+        @media (max-width: 500px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .feature-item {
+            background: #f4f6fa;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #e7ebf0;
+        }
+        .feature-item strong {
+            display: block;
+            color: #0f263a;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        .faq-mini {
+            background: #fafbfd;
+            border-radius: 16px;
+            padding: 1.4rem 1.8rem;
+            margin-top: 2rem;
+        }
+        .faq-mini dt {
+            font-weight: 600;
+            color: #0f263a;
+            margin: 1rem 0 0.2rem;
+            border-bottom: 1px dashed #dce3ec;
+            padding-bottom: 0.2rem;
+        }
+        .faq-mini dd {
+            margin-left: 0.2rem;
+            color: #3b4d61;
+            font-size: 0.96rem;
+        }
+        .visit-note {
+            background: #eef3f9;
+            border-radius: 30px;
+            padding: 0.8rem 1.8rem;
+            display: inline-block;
+            margin-top: 1.8rem;
+            font-size: 0.95rem;
+            border: 1px solid #d7e0eb;
+        }
+        .visit-note a {
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 1.8rem 0;
+        }
+        .footer-note {
+            text-align: center;
+            color: #6d7d8f;
+            font-size: 0.85rem;
+            margin-top: 2.8rem;
+            padding: 1rem 0;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>开云</h1>
+        <div class="sub">快速识别 · 用途说明 · 简洁导航</div>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h2>这个网站是做什么的？</h2>
+            <p>当用户第一次访问一个站点，最直接的问题就是“这里提供什么”。对 <a href="https://cn-portal-kai-yun.com">开云</a> 而言，它的定位清晰而又集中：一个面向中文用户的聚合入口，帮助使用者快速触及特定业务模块与信息面板。</p>
+
+            <div class="intro-highlight">
+                <strong>核心印象：</strong> 你不需要反复猜测页面结构 —— 站点将常用功能、公告、以及导航集中放置在显眼位置，省去层层跳转的麻烦。
+            </div>
+
+            <p>从实际浏览体验来看，这个门户更倾向于“工具型首页”，而非品牌展示页。无论是查找近期动态，还是进入具体服务区域，首页提供了一条短路径。如果你习惯直接切入主题，那么这里的布局节奏会比较适配你的操作习惯。</p>
+
+            <div class="blockquote-box">
+                <p>一个门户的价值，往往体现在用户能否在三秒内判断自己来对了地方。开云在这一点上做得相当直白。</p>
+                <cite>—— 来自使用者的笔记</cite>
+            </div>
+
+            <h3>适用于哪些场景？</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <strong>日常信息查阅</strong>
+                    快速浏览站点发布的最新通知、更新日志或常用入口。
+                </div>
+                <div class="feature-item">
+                    <strong>业务操作起点</strong>
+                    作为多个子模块的汇集页，适合需要频繁切换功能的用户。
+                </div>
+                <div class="feature-item">
+                    <strong>初次了解站点</strong>
+                    新访客可以通过首页的分类指引，迅速理解整体服务范围。
+                </div>
+                <div class="feature-item">
+                    <strong>移动端快速访问</strong>
+                    页面针对小屏幕做了适配，碎片时间也能顺畅浏览。
+                </div>
+            </div>
+
+            <hr>
+
+            <h3>一点提示</h3>
+            <p>如果你正在寻找某个具体功能，建议优先留意首页中部区域的卡片列表。很多常用操作已经直接外露，不需要再进入二级菜单。另外，<a href="https://cn-portal-kai-yun.com">开云</a> 的链接结构偏向扁平化，从首页出发通常一到两次点击就能到达目标内容。</p>
+
+            <div class="faq-mini">
+                <dl>
+                    <dt>这个页面会频繁更新吗？</dt>
+                    <dd>首页内容由站点运营方维护，重要通知或入口调整时一般会同步更新头图或功能区块。</dd>
+                    <dt>移动端和桌面端体验一致吗？</dt>
+                    <dd>布局有响应式适配，但核心信息层级保持一致。建议根据使用习惯选择设备。</dd>
+                    <dt>链接安全性如何？</dt>
+                    <dd>访客通过 <a href="https://cn-portal-kai-yun.com">开云</a> 跳转时，建议留意浏览器地址栏的协议与域名，保持基本的网络安全意识。</dd>
+                </dl>
+            </div>
+
+            <div class="visit-note">
+                ⚡ 前往 <a href="https://cn-portal-kai-yun.com">开云</a> 直接体验，首页即起点。
+            </div>
+        </div>
+
+        <div class="footer-note">
+            —— 简洁博客式说明页 · 内容基于站点实际结构整理 · 无夸大表述 ——
+        </div>
+    </main>
+</body>
+</html>
