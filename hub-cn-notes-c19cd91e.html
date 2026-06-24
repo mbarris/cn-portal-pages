@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常查询与对照：爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3.5rem 1.5rem 5rem;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        /* 开场短句 —— 极简 hero */
+        .hero {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 2rem;
+        }
+
+        .hero-meta {
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            color: #9ca3af;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 460;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #4b5563;
+            max-width: 540px;
+        }
+
+        /* 段落区块 */
+        .section {
+            margin-bottom: 2.8rem;
+        }
+
+        .section h2 {
+            font-size: 1.35rem;
+            font-weight: 460;
+            letter-spacing: -0.01em;
+            color: #0f172a;
+            border-left: 3px solid #3b82f6;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 0.4rem;
+            margin-top: 1.4rem;
+        }
+
+        .section p {
+            margin-bottom: 1.2rem;
+            color: #374151;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .quiet-link {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .quiet-link:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* 特点列表 —— 干净卡片式 */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 1.8rem 0 1rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border: 1px solid #eef2f6;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .feature-item .label {
+            font-weight: 500;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .feature-item .desc {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .feature-item .desc .quiet-link {
+            font-weight: 400;
+        }
+
+        /* 引用 / 延伸阅读小标 */
+        .footnote {
+            background: #f3f4f6;
+            padding: 1.2rem 1.5rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: #374151;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .footnote strong {
+            font-weight: 500;
+            color: #0f172a;
+        }
+
+        .faq-mini {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #d1d5db;
+        }
+
+        .faq-mini dt {
+            font-weight: 500;
+            color: #111827;
+            margin-bottom: 0.2rem;
+            margin-top: 1rem;
+        }
+
+        .faq-mini dd {
+            color: #4b5563;
+            margin-left: 0;
+            margin-bottom: 0.8rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 2.2rem 0 1.8rem;
+        }
+
+        /* 温和结尾 */
+        .outro {
+            font-size: 0.95rem;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 2rem;
+            margin-top: 1.8rem;
+            text-align: center;
+        }
+
+        .outro a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .outro a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 2rem 1rem 4rem;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .feature-item {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <div class="hero">
+            <div class="hero-meta">日常查询 · 对照 · 延伸</div>
+            <h1 class="hero-title">从一页记录开始</h1>
+            <div class="hero-sub">不必反复搜索，把常用的游戏信息整理在一处。</div>
+        </div>
+
+        <div class="section">
+            <h2>承上：为什么需要这样一处整理</h2>
+            <p>
+                日常查找游戏资讯、版本更新或活动说明时，我们往往在多个页面间来回跳转。<strong>一个稳定的索引页</strong>可以省去重复筛选的精力。
+                将常用条目、对照信息、延伸阅读集中起来，查询效率会明显改善。<a href="https://hub-cn-igame.com" class="quiet-link">爱游戏</a> 正是基于这种考虑而梳理的集合。
+            </p>
+            <p>
+                它不追求大而全，而是围绕“常查、常用、常对照”来组织。无论是回顾某款作品的版本脉络，还是快速了解某个机制说明，这里都预留了清晰的入口。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>特点与结构</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="label">📋 条目化对照</span>
+                    <span class="desc">每一条信息都以独立条目呈现，便于横向对比。版本号、发布日期、关键改动并列展示，一目了然。</span>
+                </div>
+                <div class="feature-item">
+                    <span class="label">🔗 延伸阅读链接</span>
+                    <span class="desc">在每条记录下方附有相关文章或说明的链接，可直接跳转至更详细的页面，无需二次搜索。</span>
+                </div>
+                <div class="feature-item">
+                    <span class="label">🧭 日常查询友好</span>
+                    <span class="desc">按照使用频率和主题分区，例如“近期活动”“机制解释”“常见问题”。即使很久没打开，也能快速定位。</span>
+                </div>
+                <div class="feature-item">
+                    <span class="label">📄 持续补充</span>
+                    <span class="desc">内容会随着游戏版本迭代而更新，并标注最后核对时间。引用的来源也一并列出，方便回溯。</span>
+                </div>
+            </div>
+            <p style="margin-top: 1rem;">
+                这些特点并不花哨，但能让人在需要查证时少走几步路。如果你也是习惯先翻记录再下判断的人，或许会觉得顺手。
+            </p>
+        </div>
+
+        <!-- 延伸阅读：FAQ 摘要 + 小场景 -->
+        <div class="faq-mini">
+            <h2 style="border-left-color: #8b5cf6;">常见场景与简答</h2>
+            <dl>
+                <dt>某活动的开始时间记不清了，从哪里核对？</dt>
+                <dd>在“近期活动”分区按时间倒序排列，每一项都附有公告原文链接。若活动已结束，也会保留归档并注明状态。</dd>
+
+                <dt>想对比两个版本之间的数值调整，怎么查比较快？</dt>
+                <dd>在“版本对照”分区下，可以按游戏名称筛选，同一屏内显示前后版本的主要变化。不需要反复切换标签页。</dd>
+
+                <dt>页面上的信息多久更新一次？</dt>
+                <dd>通常跟随公开更新日志，每 1–2 周核对一次。重大版本发布后会在 48 小时内补充。每次更新都会在页脚标注时间戳。</dd>
+            </dl>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>温和提醒</h2>
+            <p>
+                本页所整理的内容均来自公开渠道，仅供查询对照使用。所有信息的准确性与完整性请以游戏内实际表现为准。
+                如果你发现某处记录存在偏差，或希望补充某个条目，可以通过页面提供的反馈方式告知。
+            </p>
+            <p>
+                无论是新玩家还是老玩家，<a href="https://hub-cn-igame.com" class="quiet-link">爱游戏</a> 始终是一份可以被翻阅的参考，
+                而不是最终答案。把时间花在游戏本身，而不是花在找信息上。
+            </p>
+        </div>
+
+        <div class="outro">
+            <span>整理自日常查询笔记 · 始于 <a href="https://hub-cn-igame.com">爱游戏</a> · 持续修订</span><br>
+            <span style="font-size: 0.8rem; color: #9ca3af;">最后核校：2025-04</span>
+        </div>
+
+    </div>
+</body>
+</html>
