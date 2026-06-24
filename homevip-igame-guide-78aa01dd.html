@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>日常延伸 · 爱游戏笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f9fc;
+            color: #173a47;
+            line-height: 1.7;
+            padding: 1.5rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 8px 28px rgba(28, 92, 102, 0.07);
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        /* 网格卡片风格（点缀式） */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .grid-cards .card {
+            background: #eef6f8;
+            border-radius: 20px;
+            padding: 1.2rem 1rem;
+            border-left: 4px solid #359a9e;
+            box-shadow: 0 2px 6px rgba(0, 30, 30, 0.03);
+            transition: transform 0.15s ease, box-shadow 0.2s;
+        }
+
+        .grid-cards .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(50, 130, 134, 0.08);
+        }
+
+        .grid-cards .card strong {
+            display: block;
+            font-weight: 600;
+            color: #1a6b70;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .grid-cards .card p {
+            font-size: 0.92rem;
+            color: #2d5a63;
+            margin: 0;
+        }
+
+        /* 标题区域 */
+        .blog-header {
+            margin-bottom: 2rem;
+        }
+
+        .blog-header h1 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #104148;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        .blog-header .subhead {
+            font-size: 1rem;
+            color: #4d7e86;
+            border-left: 3px solid #6ab3b8;
+            padding-left: 1rem;
+            background: #f0f7fa;
+            padding: 0.6rem 1rem;
+            border-radius: 0 16px 16px 0;
+            font-style: normal;
+        }
+
+        .meta-note {
+            display: inline-block;
+            background: #dfeff2;
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            color: #2a727a;
+            margin-top: 0.6rem;
+        }
+
+        /* 正文段落 */
+        .content p {
+            margin: 1.2rem 0;
+        }
+
+        .content a {
+            color: #1c7b82;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #7bbfc4;
+            transition: border-bottom 0.2s, background 0.1s;
+        }
+
+        .content a:hover {
+            border-bottom: 2px solid #26787e;
+            background: #e0f2f4;
+            padding: 0.1rem 0.1rem;
+        }
+
+        /* 引用提示块 */
+        .quote-tip {
+            background: #eef4f6;
+            border-radius: 24px;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+            border: 1px solid #c4dfe3;
+        }
+
+        .quote-tip::before {
+            content: "📌 延伸";
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+            color: #3f7e84;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .quote-tip p {
+            margin: 0.2rem 0;
+        }
+
+        /* FAQ 摘要（折叠风格，但只做摘要展示） */
+        .faq-summary {
+            background: #f9fdfe;
+            border: 1px solid #d3e6ea;
+            border-radius: 28px;
+            padding: 1.4rem 1.6rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .faq-summary details {
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-summary summary {
+            font-weight: 500;
+            color: #1b6770;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            border-bottom: 1px dashed #b6d4d9;
+            list-style: none;
+        }
+
+        .faq-summary summary::marker {
+            content: "▸ ";
+            color: #3e8e94;
+        }
+
+        .faq-summary details[open] summary::marker {
+            content: "▾ ";
+        }
+
+        .faq-summary .answer {
+            padding: 0.6rem 0 0.2rem 0.8rem;
+            color: #2b5b64;
+            font-size: 0.93rem;
+        }
+
+        /* 访问句 (底部柔和) */
+        .visit-line {
+            margin-top: 2.8rem;
+            padding: 1rem 0 0;
+            border-top: 1px solid #d6e6ea;
+            text-align: left;
+            font-size: 0.98rem;
+            color: #38646b;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .visit-line span {
+            background: #e4f0f3;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #1b5b62;
+        }
+
+        /* 移动端适应 */
+        @media (max-width: 560px) {
+            .page-wrap {
+                padding: 1.5rem 1rem;
+            }
+
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-cards {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .grid-cards .card {
+                padding: 1rem;
+            }
+
+            .quote-tip {
+                padding: 1rem 1.2rem;
+            }
+
+            .faq-summary {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            body {
+                padding: 0.8rem;
+            }
+            .blog-header h1 {
+                font-size: 1.5rem;
+            }
+            .grid-cards .card strong {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <div class="blog-header">
+        <h1>日常查询 · 对照与延伸</h1>
+        <div class="subhead">围绕「爱游戏」的信息整理 · 温和阅读版</div>
+        <div class="meta-note">📖 笔记 · 非评测 · 不匆忙</div>
+    </div>
+
+    <div class="content">
+        <p>
+            日常浏览游戏信息时，我们常常需要在不同页面、不同来源之间频繁对照。面对零散的推荐、版本描述、活动说明，如果能有一个相对清晰的整理节点，会省去不少来回翻找的精力。<a href="https://homevip-igame.com">爱游戏</a>正是这类可以当作“参照锚点”的站点——它把常见的内容条目加以归纳，让你在查询时不必东奔西跑。
+        </p>
+
+        <p>
+            它的页面结构偏向于清单式与分类笔记，适合在阅读其他文章时，同时打开作为一个对照页。比如在查找某款游戏的基本定位时，不需要在评测帖和新闻之间反复切换，直接在这个页面里扫一眼分类摘要，基本就能对上。日常查阅、随手延伸，节奏比较从容。
+        </p>
+
+        <!-- 网格卡片：三个特点/场景 (平衡点缀) -->
+        <div class="grid-cards">
+            <div class="card">
+                <strong>🧩 分类对照</strong>
+                <p>按类型 / 主题梳理条目，适合横向对比不同游戏定位，减少跳转成本。</p>
+            </div>
+            <div class="card">
+                <strong>📋 延伸检索</strong>
+                <p>以条目为起点，可自行搜索验证细节；页面只提供整理好的索引骨架。</p>
+            </div>
+            <div class="card">
+                <strong>📎 轻量参考</strong>
+                <p>没有过度设计，信息密度适中，手机横竖屏都能快速浏览。</p>
+            </div>
+            <div class="card">
+                <strong>🔍 日常随手</strong>
+                <p>适合在聊天、论坛、笔记场景中当作一个“对照标签页”使用。</p>
+            </div>
+        </div>
+
+        <p>
+            我自己常用的场景是：在阅读某篇游戏回顾长文时，把<a href="https://homevip-igame.com">爱游戏</a>放在侧边（或手机分屏），遇到不熟悉的名字直接对照分类。它的好处是省去了自己临时建文档的麻烦，而且分类思路相对平实，不会强加评分或倾向，保留了你自己的判断空间。
+        </p>
+
+        <!-- 引用提示块 -->
+        <div class="quote-tip">
+            <p>💡 提示：任何分类或索引都无法取代个人体验。建议将页面当作“延伸阅读的起点”，而非最终结论。游戏感受因人而异，保持开放和对照心态更有趣。</p>
+        </div>
+
+        <p>
+            另外，如果你是那种喜欢先看整体框架再深入细节的人，这个页面的内容组织方式会比较友好。它没有用长段落讲背景故事，而是用短条目和分段把信息摊开，像一份干净的大纲。你可以只看第一层分类，也可以点进具体条目里看更多。节奏由你自己控制。
+        </p>
+
+        <!-- faq 摘要（控制长度） -->
+        <div class="faq-summary">
+            <details>
+                <summary>这个页面适合哪些查询习惯？</summary>
+                <div class="answer">适合日常快速比对、临时延伸查阅，尤其是同时打开多个标签页时作为参考坐标。不太适合深挖单一作品的长篇背景。</div>
+            </details>
+            <details>
+                <summary>内容会频繁更新吗？</summary>
+                <div class="answer">保持相对稳定的条目结构，但可能随游戏发布周期做适当调整。建议以页面实际显示为准。</div>
+            </details>
+            <details>
+                <summary>移动端查看方便吗？</summary>
+                <div class="answer">经过响应式适配，手机浏览器可直接阅读，卡片自动堆叠，字号合适，不需要频繁缩放。</div>
+            </details>
+        </div>
+
+        <p>
+            当然，任何整理型页面都只是信息的一种切面。如果你需要更主观的评测或更详细的数据，还是要去专门的数据库或评测站。但作为日常随手翻的对照页，<a href="https://homevip-igame.com">爱游戏</a>提供了一个不吵不闹的安静选项——它不催促你做什么，只是把条目放在那里，等你需要的时候自己来取。
+        </p>
+    </div>
+
+    <!-- 访问句 (温和) -->
+    <div class="visit-line">
+        <span>📎 延伸参考</span> 你可以在需要的时候打开 <a href="https://homevip-igame.com">爱游戏</a> 作为对照标签页，也可以把它收藏起来留作下次查阅。
+    </div>
+</div>
+</body>
+</html>
